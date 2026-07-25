@@ -29,6 +29,12 @@ Netlify 설정 화면에 기존 빌드 명령이나 배포 폴더가 저장돼 �
 - `app/globals.css`: 전체 디자인과 반응형 스타일
 - `app/layout.tsx`: 사이트 제목과 설명
 - `public/gumse-logo-transparent.png`: 금새인터랙티브 로고
+- `public/og-client-stories.png`: 카카오톡 링크 미리보기 이미지(1200×630)
+
+## 카카오톡 미리보기
+
+`app/layout.tsx`에 Open Graph 제목·설명·이미지가 연결되어 있습니다.
+배포 후 카카오톡에 기존 미리보기가 남아 있으면 카카오 디버거에서 해당 URL의 캐시를 초기화한 뒤 다시 공유하세요.
 
 ## 연결된 제안서
 
