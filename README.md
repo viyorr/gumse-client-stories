@@ -23,6 +23,35 @@ npm run dev
 
 Netlify 설정 화면에 기존 빌드 명령이나 배포 폴더가 저장돼 있다면 위 값으로 바꾸거나 비워서 `netlify.toml`을 사용하세요.
 
+## 기존 GitHub 저장소를 업데이트할 때
+
+GitHub 웹에서 새 파일을 업로드하면 기존 파일은 자동으로 삭제되지 않습니다. 이전 Sites 프로젝트에서 사용하던 아래 파일이나 폴더가 저장소에 남아 있다면 삭제하세요.
+
+- `build/`
+- `scripts/`
+- `worker/`
+- `tests/`
+- `db/`
+- `drizzle/`
+- `examples/`
+- `vite.config.ts`
+- `drizzle.config.ts`
+- `app/chatgpt-auth.ts`
+
+이 전달본의 `tsconfig.json`에는 위 구형 파일을 TypeScript 검사에서 제외하는 설정도 포함되어 있습니다. 따라서 수정된 `tsconfig.json`을 반드시 GitHub에 함께 업로드해야 합니다.
+
+Git을 사용하는 경우, 저장소에 실제로 존재하는 항목만 골라 삭제한 다음 커밋합니다.
+
+```bash
+git rm -r build scripts worker tests db drizzle examples
+git rm vite.config.ts drizzle.config.ts app/chatgpt-auth.ts
+git add .
+git commit -m "Fix Netlify build configuration"
+git push
+```
+
+삭제 명령에서 `pathspec` 오류가 나는 항목은 저장소에 없는 것이므로 건너뛰면 됩니다. 업로드 후 Netlify에서 `Clear cache and deploy site`로 다시 배포하세요.
+
 ## 주요 수정 파일
 
 - `app/page.tsx`: 후기 문구, 성과 수치, 업종, 제안서 링크
