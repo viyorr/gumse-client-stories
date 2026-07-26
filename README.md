@@ -58,7 +58,7 @@ git push
 - `app/globals.css`: 전체 디자인과 반응형 스타일
 - `app/layout.tsx`: 사이트 제목과 설명
 - `public/gumse-logo-transparent.png`: 금새인터랙티브 로고
-- `public/og-client-stories.png`: 카카오톡 링크 미리보기 이미지(1200×630)
+- `public/og-client-stories-v4.png`: 카카오톡 링크 미리보기 이미지(1200×630)
 
 ## 카카오톡 미리보기
 
